@@ -1,10 +1,10 @@
 package uy.edu.um.adt.linkedlist;
 
 import lombok.Getter;
-import uy.edu.um.tad.queue.EmptyQueueException;
-import uy.edu.um.tad.queue.MyQueue;
-import uy.edu.um.tad.stack.EmptyStackException;
-import uy.edu.um.tad.stack.MyStack;
+import uy.edu.um.adt.queue.EmptyQueueException;
+import uy.edu.um.adt.queue.MyQueue;
+import uy.edu.um.adt.stack.EmptyStackException;
+import uy.edu.um.adt.stack.MyStack;
 
 public class MyLinkedListImpl<T> implements MyList<T>, MyQueue<T>, MyStack<T> {
 
