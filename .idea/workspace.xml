@@ -4,37 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="045ff70c-0ca7-4566-8f6c-33b6b21a9015" name="Changes" comment="prueba">
-      <change beforePath="$PROJECT_DIR$/nm/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/binarytree/BinaryTree.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/binarytree/SearchBinaryTreeImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/binarytree/TreeNode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/hash/MyHash.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/linkedlist/MyLinkedListImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/linkedlist/MyList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/linkedlist/Node.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/ntree/Tree.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/ntree/TreeImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/queue/EmptyQueueException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/queue/MyQueue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/stack/EmptyStackException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/stack/MyStack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/entities/Artista.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/entities/Cancion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/entities/Top50.java" beforeDir="false" />
+    <list default="true" id="045ff70c-0ca7-4566-8f6c-33b6b21a9015" name="Changes" comment="probando">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/hash/HashImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/exceptions/InformacionInvalida.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/uy.edu.um.adt/TestHash.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/uy.edu.um.adt/TestList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/uy.edu.um.adt/TestQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/uy.edu.um.adt/TestStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/uy.edu.um.adt/TestTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/hash/MyHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/hash/MyHash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/linkedlist/MyLinkedListImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/linkedlist/MyLinkedListImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2gpzxjEw3lZ7DYx0S6dROO59GlS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -43,6 +43,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.MyListTest.executor": "Run",
+    "JUnit.TestHash.executor": "Run",
+    "JUnit.TestList.executor": "Run",
+    "JUnit.TestQueue.executor": "Run",
+    "JUnit.TestQueue.testGet.executor": "Run",
+    "JUnit.TestStack.executor": "Run",
+    "JUnit.TestTree.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -62,6 +69,95 @@
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Prog2" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="uy.edu.um.adt" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.TestTree">
+    <configuration name="TestHash" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ObligatorioProg2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uy.edu.um.adt.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uy.edu.um.adt" />
+      <option name="MAIN_CLASS_NAME" value="uy.edu.um.adt.TestHash" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ObligatorioProg2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uy.edu.um.adt.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uy.edu.um.adt" />
+      <option name="MAIN_CLASS_NAME" value="uy.edu.um.adt.TestList" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestQueue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ObligatorioProg2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uy.edu.um.adt.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uy.edu.um.adt" />
+      <option name="MAIN_CLASS_NAME" value="uy.edu.um.adt.TestQueue" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestStack" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ObligatorioProg2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uy.edu.um.adt.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uy.edu.um.adt" />
+      <option name="MAIN_CLASS_NAME" value="uy.edu.um.adt.TestStack" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ObligatorioProg2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uy.edu.um.adt.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uy.edu.um.adt" />
+      <option name="MAIN_CLASS_NAME" value="uy.edu.um.adt.TestTree" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestTree" />
+        <item itemvalue="JUnit.TestStack" />
+        <item itemvalue="JUnit.TestQueue" />
+        <item itemvalue="JUnit.TestList" />
+        <item itemvalue="JUnit.TestHash" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -78,7 +174,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716409557172</updated>
-      <workItem from="1716409558272" duration="476000" />
+      <workItem from="1716409558272" duration="773000" />
+      <workItem from="1716661093578" duration="5097000" />
     </task>
     <task id="LOCAL-00001" summary="prueba">
       <option name="closed" value="true" />
@@ -96,7 +193,39 @@
       <option name="project" value="LOCAL" />
       <updated>1716409776676</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="probando">
+      <option name="closed" value="true" />
+      <created>1716410040968</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716410040968</updated>
+    </task>
+    <task id="LOCAL-00004" summary="probando">
+      <option name="closed" value="true" />
+      <created>1716410102794</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716410102794</updated>
+    </task>
+    <task id="LOCAL-00005" summary="probando">
+      <option name="closed" value="true" />
+      <created>1716410218176</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716410218176</updated>
+    </task>
+    <task id="LOCAL-00006" summary="probando">
+      <option name="closed" value="true" />
+      <created>1716410319766</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716410319766</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +244,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="prueba" />
-    <option name="LAST_COMMIT_MESSAGE" value="prueba" />
+    <MESSAGE value="probando" />
+    <option name="LAST_COMMIT_MESSAGE" value="probando" />
   </component>
 </project>
