@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="045ff70c-0ca7-4566-8f6c-33b6b21a9015" name="Changes" comment="probando">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/hash/HashImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/exceptions/InformacionInvalida.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/uy.edu.um.adt/TestHash.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/uy.edu.um.adt/TestList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/uy.edu.um.adt/TestQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/uy.edu.um.adt/TestStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/uy.edu.um.adt/TestTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/hash/MyHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/hash/MyHash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/linkedlist/MyLinkedListImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/linkedlist/MyLinkedListImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="045ff70c-0ca7-4566-8f6c-33b6b21a9015" name="Changes" comment="hash y tests unitarios" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,29 +29,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.MyListTest.executor": "Run",
-    "JUnit.TestHash.executor": "Run",
-    "JUnit.TestList.executor": "Run",
-    "JUnit.TestQueue.executor": "Run",
-    "JUnit.TestQueue.testGet.executor": "Run",
-    "JUnit.TestStack.executor": "Run",
-    "JUnit.TestTree.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/Users/sophiaguerra/Desktop/ObligatorioProg2/src/main/java/uy/edu/um/Main.java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.MyListTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestHash.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestList.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestQueue.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestQueue.testGet.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestStack.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestTree.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/sophiaguerra/Desktop/ObligatorioProg2/src/main/java/uy/edu/um/Main.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -73,8 +61,8 @@
       <recent name="uy.edu.um.adt" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestTree">
-    <configuration name="TestHash" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestBinaryTree">
+    <configuration name="TestBinaryTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ObligatorioProg2" />
       <extension name="coverage">
         <pattern>
@@ -83,7 +71,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="uy.edu.um.adt" />
-      <option name="MAIN_CLASS_NAME" value="uy.edu.um.adt.TestHash" />
+      <option name="MAIN_CLASS_NAME" value="uy.edu.um.adt.TestBinaryTree" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -99,6 +87,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="uy.edu.um.adt" />
       <option name="MAIN_CLASS_NAME" value="uy.edu.um.adt.TestList" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestNTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ObligatorioProg2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uy.edu.um.adt.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uy.edu.um.adt" />
+      <option name="MAIN_CLASS_NAME" value="uy.edu.um.adt.TestNTree" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -134,28 +137,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ObligatorioProg2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uy.edu.um.adt.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="uy.edu.um.adt" />
-      <option name="MAIN_CLASS_NAME" value="uy.edu.um.adt.TestTree" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestTree" />
+        <item itemvalue="JUnit.TestBinaryTree" />
+        <item itemvalue="JUnit.TestNTree" />
         <item itemvalue="JUnit.TestStack" />
         <item itemvalue="JUnit.TestQueue" />
         <item itemvalue="JUnit.TestList" />
-        <item itemvalue="JUnit.TestHash" />
       </list>
     </recent_temporary>
   </component>
@@ -175,7 +163,7 @@
       <option name="presentableId" value="Default" />
       <updated>1716409557172</updated>
       <workItem from="1716409558272" duration="773000" />
-      <workItem from="1716661093578" duration="5097000" />
+      <workItem from="1716661093578" duration="5134000" />
     </task>
     <task id="LOCAL-00001" summary="prueba">
       <option name="closed" value="true" />
@@ -225,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716410319766</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="hash y tests unitarios">
+      <option name="closed" value="true" />
+      <created>1716666435969</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716666435969</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +241,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="prueba" />
     <MESSAGE value="probando" />
-    <option name="LAST_COMMIT_MESSAGE" value="probando" />
+    <MESSAGE value="hash y tests unitarios" />
+    <option name="LAST_COMMIT_MESSAGE" value="hash y tests unitarios" />
   </component>
 </project>

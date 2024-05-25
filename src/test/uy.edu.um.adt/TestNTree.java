@@ -7,7 +7,7 @@ import uy.edu.um.adt.ntree.TreeImpl;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestTree {
+public class TestNTree {
     private TreeImpl<Integer> tree;
 
     @BeforeEach
