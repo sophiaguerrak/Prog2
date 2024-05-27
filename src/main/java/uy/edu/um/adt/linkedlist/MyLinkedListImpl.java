@@ -34,7 +34,7 @@ public class MyLinkedListImpl<T> implements MyList<T>, MyQueue<T>, MyStack<T> {
                 this.first = elementToAdd;
                 this.last = elementToAdd;
 
-            } else { // en caso de no ser vacia se agrega al comienzo
+            } else {
 
                 this.last.setNext(elementToAdd);
                 this.last = elementToAdd;

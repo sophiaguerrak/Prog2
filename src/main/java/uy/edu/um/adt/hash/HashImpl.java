@@ -16,20 +16,26 @@ public class HashImpl<K, V> implements MyHash<K, V> {
         }
     }
 
-    private ArrayList<Dato<K, V>>[] hashTable;
+    private Dato<K, V>[] hashTable;
     private int capacidad;
     private static final double LOAD_FACTOR = 0.75;
 
     public HashImpl(int capacity) {
         this.capacidad = capacity;
-        hashTable = (ArrayList<Dato<K, V>>[]) new ArrayList[capacity];
-        for (int i = 0; i<capacity; i++) {
-            hashTable[i] = new ArrayList<>();
-        }
+        this.hashTable = new Dato[capacity];
     }
 
     private int getHashIndex(K key) {  // lo uso para insertar los datos de forma distribuida en la hash table
-        return Math.abs(key.hashCode()) % capacidad;
+        int hash = Math.abs(key.hashCode());
+        int index = hash % capacidad;
+
+        while (hashTable[index] != null) {
+            if (hashTable[index].key.equals(key)) {
+                return index;  // Elemento encontrado
+            }
+            index = (index + 1) % capacidad;
+        }
+        return index;
     }
 
     @Override
@@ -37,11 +43,11 @@ public class HashImpl<K, V> implements MyHash<K, V> {
         if (key == null) {
             throw new InformacionInvalida();
         }
-        if (size() + 1 >= capacidad * LOAD_FACTOR) {
+        if ((size() + 1 >= capacidad * LOAD_FACTOR) || getHashIndex(key) +1>=capacidad*LOAD_FACTOR) {
             resize();
         }
         int index = getHashIndex(key);
-        hashTable[index].add(new Dato<>(key, value));
+        hashTable[index] = new Dato<K,V>(key, value);
     }
 
 
@@ -51,9 +57,11 @@ public class HashImpl<K, V> implements MyHash<K, V> {
             throw new InformacionInvalida();
         }
         int index = getHashIndex(key);
-        for (Dato<K, V> dato : hashTable[index]) {
-            if (dato.key.equals(key)) {
-                return dato.value;
+        for (Dato<K, V> dato : hashTable) {
+            if(dato!=null) {
+                if (dato.key.equals(key)) {
+                    return dato.value;
+                }
             }
         }
         return null;
@@ -62,18 +70,11 @@ public class HashImpl<K, V> implements MyHash<K, V> {
 
     @Override
     public void delete(K key) throws InformacionInvalida {
-        if (key == null) {
+        if (key == null || !contains(key)) {
             throw new InformacionInvalida();
         }
         int index = getHashIndex(key);
-        List<Dato<K, V>> bucket = hashTable[index];
-        for (int i = 0; i < bucket.size(); i++) {
-            Dato<K, V> dato = bucket.get(i);
-            if (dato.key.equals(key)) {
-                bucket.remove(i);
-                break;
-            }
-        }
+        hashTable[index] = null;
     }
 
     @Override
@@ -87,28 +88,26 @@ public class HashImpl<K, V> implements MyHash<K, V> {
     @Override
     public int size() {
         int size = 0;
-        for (ArrayList<Dato<K, V>> bucket : hashTable) {
-            size += bucket.size();
+        for (Dato<K,V> dato : hashTable) {
+            if(dato!=null)
+                size ++;
         }
         return size;
     }
 
     private void resize() throws InformacionInvalida {
         int nuevaCapacidad = capacidad * 2;
-        ArrayList<Dato<K, V>>[] newTable = (ArrayList<Dato<K, V>>[]) new ArrayList[nuevaCapacidad];
-        for (int i = 0; i < nuevaCapacidad; i++) {
-            newTable[i] = new ArrayList<>();
-        }
-        ArrayList<Dato<K, V>>[] oldTable = hashTable;
+        Dato<K, V>[] nuevoArray = new Dato[nuevaCapacidad];
+        Dato<K, V>[] viejoArray = hashTable;
         this.capacidad = nuevaCapacidad;
-        this.hashTable = newTable;
-        for (ArrayList<Dato<K, V>> bucket : oldTable) {
-            for (Dato<K, V> dato : bucket) {
-                if (dato != null) {
-                    insert(dato.key, dato.value);
-                }
+        this.hashTable = nuevoArray;
+        for (Dato<K, V> dato : viejoArray) {
+            if (dato != null) {
+                insert(dato.key, dato.value);
             }
         }
+
+
     }
 }
 
