@@ -19,10 +19,12 @@ public class HashImpl<K, V> implements MyHash<K, V> {
     private Dato<K, V>[] hashTable;
     private int capacidad;
     private static final double LOAD_FACTOR = 0.75;
+    private int size;
 
     public HashImpl(int capacity) {
         this.capacidad = capacity;
         this.hashTable = new Dato[capacity];
+        this.size=0;
     }
 
     private int getHashIndex(K key) {  // lo uso para insertar los datos de forma distribuida en la hash table
@@ -43,11 +45,12 @@ public class HashImpl<K, V> implements MyHash<K, V> {
         if (key == null) {
             throw new InformacionInvalida();
         }
-        if ((size() + 1 >= capacidad * LOAD_FACTOR) || getHashIndex(key) +1>=capacidad*LOAD_FACTOR) {
+        if ((size + 1 >= capacidad * LOAD_FACTOR) || getHashIndex(key) +1>=capacidad*LOAD_FACTOR) { // nose que tan necesario es el segundo de getHashIndex +1
             resize();
         }
         int index = getHashIndex(key);
         hashTable[index] = new Dato<K,V>(key, value);
+        size++;
     }
 
 
@@ -57,13 +60,9 @@ public class HashImpl<K, V> implements MyHash<K, V> {
             throw new InformacionInvalida();
         }
         int index = getHashIndex(key);
-        for (Dato<K, V> dato : hashTable) {
-            if(dato!=null) {
-                if (dato.key.equals(key)) {
-                    return dato.value;
-                }
-            }
-        }
+        if (hashTable[index]!=null)
+            return hashTable[index].value;
+
         return null;
     }
 
@@ -83,16 +82,6 @@ public class HashImpl<K, V> implements MyHash<K, V> {
             throw new InformacionInvalida();
         }
         return search(key) != null;
-    }
-
-    @Override
-    public int size() {
-        int size = 0;
-        for (Dato<K,V> dato : hashTable) {
-            if(dato!=null)
-                size ++;
-        }
-        return size;
     }
 
     private void resize() throws InformacionInvalida {

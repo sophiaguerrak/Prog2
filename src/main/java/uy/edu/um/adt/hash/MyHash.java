@@ -7,5 +7,4 @@ public interface MyHash<K,T> {
     T search(K key) throws InformacionInvalida;
     void delete(K key) throws InformacionInvalida;
     boolean contains(K key) throws InformacionInvalida;
-    int size();
 }
