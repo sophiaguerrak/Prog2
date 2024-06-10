@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="045ff70c-0ca7-4566-8f6c-33b6b21a9015" name="Changes" comment="test unitario binary tree">
-      <change afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/heap/MyHeapImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/uy.edu.um.adt/TestHeap.java" afterDir="false" />
+    <list default="true" id="045ff70c-0ca7-4566-8f6c-33b6b21a9015" name="Changes" comment="arreglos al hash">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/hash/HashImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/hash/HashImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/linkedlist/MyLinkedListImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/linkedlist/MyLinkedListImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/entities/Artista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/entities/Artista.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +24,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;sophiaguerrak&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:sophiaguerrak/Prog2.git&quot;,
+    &quot;accountId&quot;: &quot;20bea0c5-fb8e-40d3-877c-88895be4e42f&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -37,6 +49,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "JUnit.MyListTest.executor": "Run",
     "JUnit.TestBinaryTree.executor": "Run",
     "JUnit.TestHash.executor": "Run",
@@ -58,6 +71,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/sophiaguerra/Desktop/ObligatorioProg2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -76,7 +90,20 @@
       <recent name="uy.edu.um.adt" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestHeap.testGet">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="uy.edu.um.adt.Main" />
+      <module name="ObligatorioProg2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uy.edu.um.adt.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestHeap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ObligatorioProg2" />
       <extension name="coverage">
@@ -124,21 +151,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestQueue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ObligatorioProg2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uy.edu.um.adt.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="uy.edu.um.adt" />
-      <option name="MAIN_CLASS_NAME" value="uy.edu.um.adt.TestQueue" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestStack" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ObligatorioProg2" />
       <extension name="coverage">
@@ -156,18 +168,19 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TestHeap.testGet" />
         <item itemvalue="JUnit.TestHeap.testInsertAndSize" />
         <item itemvalue="JUnit.TestHeap" />
         <item itemvalue="JUnit.TestStack" />
-        <item itemvalue="JUnit.TestQueue" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-322ed176" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
       </set>
     </attachedChunks>
   </component>
@@ -182,7 +195,11 @@
       <workItem from="1716409558272" duration="773000" />
       <workItem from="1716661093578" duration="5134000" />
       <workItem from="1716666987197" duration="239000" />
-      <workItem from="1716757434978" duration="9480000" />
+      <workItem from="1716757434978" duration="9695000" />
+      <workItem from="1716769461794" duration="598000" />
+      <workItem from="1717196433207" duration="3658000" />
+      <workItem from="1717861076544" duration="27000" />
+      <workItem from="1718037777961" duration="6432000" />
     </task>
     <task id="LOCAL-00001" summary="prueba">
       <option name="closed" value="true" />
@@ -248,7 +265,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716667221134</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="heap y test heap">
+      <option name="closed" value="true" />
+      <created>1716768514997</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716768514997</updated>
+    </task>
+    <task id="LOCAL-00010" summary="arreglos al hash">
+      <option name="closed" value="true" />
+      <created>1717203207093</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1717203207093</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,17 +303,8 @@
     <MESSAGE value="probando" />
     <MESSAGE value="hash y tests unitarios" />
     <MESSAGE value="test unitario binary tree" />
-    <option name="LAST_COMMIT_MESSAGE" value="test unitario binary tree" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/uy.edu.um.adt/TestHeap.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="heap y test heap" />
+    <MESSAGE value="arreglos al hash" />
+    <option name="LAST_COMMIT_MESSAGE" value="arreglos al hash" />
   </component>
 </project>
