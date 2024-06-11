@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="045ff70c-0ca7-4566-8f6c-33b6b21a9015" name="Changes" comment="arreglos al hash">
+    <list default="true" id="045ff70c-0ca7-4566-8f6c-33b6b21a9015" name="Changes" comment="hice funcion para cargar datos. hay que arreglar pq da error de memoria">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/entities/Artista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/entities/Artista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/hash/HashImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/hash/HashImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +77,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "/Users/sophiaguerra/Desktop/ObligatorioProg2/src/main/java/uy/edu/um/Main.java",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -92,11 +92,11 @@
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uy.edu.um.adt.Main" />
+      <option name="MAIN_CLASS_NAME" value="uy.edu.um.Main" />
       <module name="ObligatorioProg2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uy.edu.um.adt.*" />
+          <option name="PATTERN" value="uy.edu.um.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -108,7 +108,7 @@
       <module name="ObligatorioProg2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uy.edu.um.adt.*" />
+          <option name="PATTERN" value="uy.edu.um.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,7 +123,7 @@
       <module name="ObligatorioProg2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uy.edu.um.adt.*" />
+          <option name="PATTERN" value="uy.edu.um.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -139,7 +139,7 @@
       <module name="ObligatorioProg2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uy.edu.um.adt.*" />
+          <option name="PATTERN" value="uy.edu.um.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -155,7 +155,7 @@
       <module name="ObligatorioProg2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uy.edu.um.adt.*" />
+          <option name="PATTERN" value="uy.edu.um.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -200,6 +200,9 @@
       <workItem from="1717196433207" duration="3658000" />
       <workItem from="1717861076544" duration="27000" />
       <workItem from="1718037777961" duration="6432000" />
+      <workItem from="1718044236161" duration="61000" />
+      <workItem from="1718044557544" duration="4176000" />
+      <workItem from="1718126383979" duration="891000" />
     </task>
     <task id="LOCAL-00001" summary="prueba">
       <option name="closed" value="true" />
@@ -281,7 +284,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717203207093</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="hice funcion para cargar datos. hay que arreglar pq da error de memoria">
+      <option name="closed" value="true" />
+      <created>1718044289701</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1718044289701</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,6 +316,11 @@
     <MESSAGE value="test unitario binary tree" />
     <MESSAGE value="heap y test heap" />
     <MESSAGE value="arreglos al hash" />
-    <option name="LAST_COMMIT_MESSAGE" value="arreglos al hash" />
+    <MESSAGE value="hice funcion para cargar datos. hay que arreglar pq da error de memoria" />
+    <option name="LAST_COMMIT_MESSAGE" value="hice funcion para cargar datos. hay que arreglar pq da error de memoria" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

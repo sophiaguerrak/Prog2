@@ -45,7 +45,7 @@ public class HashImpl<K, V> implements MyHash<K, V> {
         if (key == null) {
             throw new InformacionInvalida();
         }
-        if ((size + 1 >= capacidad * LOAD_FACTOR) || getHashIndex(key) +1>=capacidad*LOAD_FACTOR) { // nose que tan necesario es el segundo de getHashIndex +1
+        if (size + 1 >= capacidad * LOAD_FACTOR) { // nose que tan necesario es el segundo de getHashIndex +1
             resize();
         }
         int index = getHashIndex(key);

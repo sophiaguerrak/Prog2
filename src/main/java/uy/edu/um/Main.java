@@ -1,4 +1,4 @@
-package uy.edu.um.adt;
+package uy.edu.um;
 
 import uy.edu.um.entities.Artista;
 import uy.edu.um.entities.Cancion;
@@ -28,24 +28,24 @@ public class Main {
         File file = new File("/Users/sophiaguerra/Desktop/universal_top_spotify_songs.csv");
         Scanner sc = new Scanner(file);
 
-        // Se saltea la primera línea
+        // saltea la primera línea
         if (sc.hasNext()) {
             sc.nextLine();
         }
 
-        HashImpl<String, Artista> artistasTodos = new HashImpl<>(100000);
+        HashImpl<String, Artista> artistasTodos = new HashImpl<>(100);
         MyLinkedListImpl<Top50> top50List = new MyLinkedListImpl<>();
 
         while (sc.hasNext()) {
             String line = sc.nextLine();
-            // dividimos la línea manualmente para separar el primer campo que no tiene comillas
-            int firstCommaIndex = line.indexOf(',');
-            String restOfLine = line.substring(firstCommaIndex + 1);
+            // separamos el primer campo
+            int primerSeparador = line.indexOf(',');
+            String resto = line.substring(primerSeparador + 1);
 
-            // usamos split para separar los campos restantes
-            String[] data = restOfLine.split("\",\"");
+            // separamos los campos restantes
+            String[] data = resto.split("\",\"");
 
-            // limpiamos las comillas de los campos que nos interesan
+            // limpiamos las comillas que sobran
             String nombre = data[0].replaceAll("\"", "").trim();
             String artistaNombre = data[1].replaceAll("\"", "").trim();
             int posicion = Integer.parseInt(data[2].replaceAll("[^0-9]", "").trim());
@@ -54,11 +54,9 @@ public class Main {
             String fechaStr = data[6].replaceAll("\"", "").trim();
             Date fecha = new SimpleDateFormat("yyyy-MM-dd").parse(fechaStr);
 
-            // separamos los artistas si son más de 2 y creamos una lista de artistas
+            // si son más de 2 artistas se crea una lista
             String[] artistasArray = artistaNombre.split(",");
             MyLinkedListImpl<Artista> artistasList = new MyLinkedListImpl<>();
-            Cancion cancion = new Cancion(nombre, artistasList, posicion, tempo);
-
             for (String artistName : artistasArray) {
                 artistName = artistName.trim();
                 Artista artista = artistasTodos.search(artistName);
@@ -69,6 +67,8 @@ public class Main {
                 }
                 artistasList.add(artista);
             }
+
+            Cancion cancion = new Cancion(nombre, artistasList, posicion, tempo);
 
             // busca el top50 correspondiente y lo crea si no existe
             Top50 top50 = null;
@@ -93,14 +93,20 @@ public class Main {
             }
 
             // verificamos
-            System.out.println("Nombre: " + nombre);
-            System.out.println("Artistas: " + artistaNombre);
-            System.out.println("Posición: " + posicion);
-            System.out.println("Tempo: " + tempo);
-            System.out.println("País: " + pais);
-            System.out.println("Fecha: " + fecha);
-            System.out.println();
+//            System.out.println("Nombre: " + nombre);
+//            System.out.println("Artistas: " + artistaNombre);
+//            System.out.println("Posición: " + posicion);
+//            System.out.println("Tempo: " + tempo);
+//            System.out.println("País: " + pais);
+//            System.out.println("Fecha: " + fecha);
+//            System.out.println();
+
+            // Libera memoria innecesaria
+            artistasList = null;
+            cancion = null;
         }
         sc.close();
     }
+
+
 }
