@@ -24,20 +24,66 @@ public class Main {
     private static HashImpl<String, HashImpl<Date, Top50>> top50Map = new HashImpl<>(100);
     private static MyLinkedListImpl<String> paises = new MyLinkedListImpl<>();
 
+
+
     public static void main(String[] args) {
+        String fechaStr;
+        String anio;
+        String mes;
+        String dia;
+
+
         try {
             cargardatos();
-
-            // obtener el top 10 de canciones para Uruguay en una fecha específica
-            String pais = "UY";
-            String fechaStr = "2024-01-0";
-
-            obtenerTop10Canciones(pais, fechaStr);
-            obtener5CancionesMasRepetidas(fechaStr);
-
-        } catch (FileNotFoundException | ParseException | InformacionInvalida e) {
-            e.printStackTrace();
+            int opcion = 1000;
+            while (opcion != 0) {
+                ImprmirMenu();
+                Scanner input = new Scanner(System.in);
+                opcion = input.nextInt();
+                switch (opcion) {
+                    case 1:
+                        System.out.println("Elija un pais: ");
+                        String pais = input.nextLine();
+                        System.out.println("Seleccione la fecha - ANIO: ");
+                        anio = input.nextLine() + "-";
+                        System.out.println("MES: ");
+                        mes = input.nextLine() + "-";
+                        System.out.println("DIA: ");
+                        dia = input.nextLine();
+                        fechaStr = anio + mes + dia;
+                        obtenerTop10Canciones(pais, fechaStr);
+                        break;
+                    case 2:
+                        System.out.println("Seleccione la fecha. ANIO: ");
+                        anio = input.nextLine() + "-";
+                        System.out.println("MES: ");
+                        mes = input.nextLine() + "-";
+                        System.out.println("DIA: ");
+                        dia = input.nextLine();
+                        fechaStr = anio + mes + dia;
+                        obtener5CancionesMasRepetidas(fechaStr);
+                        break;
+                    default:
+                        System.out.println("No hay mas opciones");
+                }
+                System.out.println("\n");
+            }
+        } catch(FileNotFoundException | ParseException | InformacionInvalida e) {
+                e.printStackTrace();
         }
+    }
+
+
+    public static void ImprmirMenu() throws InformacionInvalida {
+        System.out.println("BIENVENIDO AL SISTEMA DE CONSULTAS DE DATOS DE SPOTIFY");
+        System.out.println("1 - TOP 10 CANCIONES (segun pais y fecha)");
+        System.out.println("2 - TOP 5 CANCIONES en TOPs 50 (segun fecha)");
+        System.out.println("3 - TOP 7 ARTISTAS en TOPs 50 (para un rango de fechas)");
+        System.out.println("4 - APARICIONES DE ARTISTA ESPECIFICO (en una fecha)");
+        System.out.println("5 - CANTIDAD DE CANCIONES para un rango de tempo y fechas especifico");
+
+        System.out.println("Digite el numero de la consulta que quiere realizar: ");
+
     }
 
     public static void cargardatos() throws FileNotFoundException, ParseException, InformacionInvalida {
@@ -146,5 +192,4 @@ public class Main {
     public static void obtener5CancionesMasRepetidas(String fechaStr) throws ParseException, InformacionInvalida {
 
     }
-
 }
