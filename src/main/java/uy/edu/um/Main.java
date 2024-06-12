@@ -16,8 +16,10 @@ import java.text.SimpleDateFormat;
 
 import static java.lang.System.in;
 
+
 public class Main {
 
+    private static final String MYPATH = "C:\\Users\\pc\\Desktop\\Facultad\\Semestre3\\Prog2\\DataSet\\universal_top_spotify_songs.csv";
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
     private static HashImpl<String, HashImpl<Date, Top50>> top50Map = new HashImpl<>(100);
     private static MyLinkedListImpl<String> paises = new MyLinkedListImpl<>();
@@ -27,8 +29,8 @@ public class Main {
             cargardatos();
 
             // obtener el top 10 de canciones para Uruguay en una fecha específica
-            String pais = "ES";
-            String fechaStr = "2024-01-01";
+            String pais = "UY";
+            String fechaStr = "2024-01-0";
 
             obtenerTop10Canciones(pais, fechaStr);
             obtener5CancionesMasRepetidas(fechaStr);
@@ -39,7 +41,7 @@ public class Main {
     }
 
     public static void cargardatos() throws FileNotFoundException, ParseException, InformacionInvalida {
-        File file = new File("/Users/sophiaguerra/Desktop/universal_top_spotify_songs.csv");
+        File file = new File(MYPATH);
         Scanner sc = new Scanner(file);
 
         // Se saltea la primer linea
@@ -93,7 +95,7 @@ public class Main {
             // busca el top50 correspondiente a la fecha, lo crea si no existe
             Top50 top50 = fechaMap.search(fecha);
             if (top50 == null) {
-                top50 = new Top50(pais, new Cancion[50], fecha);
+                top50 = new Top50(pais, fecha);
                 fechaMap.insert(fecha, top50);
             }
 

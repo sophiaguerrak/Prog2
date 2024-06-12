@@ -4,12 +4,11 @@ import java.util.Date;
 
 public class Top50 {
     String pais;
-    Cancion[] playlist = new Cancion[50];
     Date fecha;
+    Cancion[] playlist =  new Cancion[50];
 
-    public Top50(String pais, Cancion[] playlist, Date fecha) {
+    public Top50(String pais, Date fecha) {
         this.pais = pais;
-        this.playlist = playlist;
         this.fecha = fecha;
     }
 
