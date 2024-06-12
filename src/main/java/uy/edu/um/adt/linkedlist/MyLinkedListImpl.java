@@ -19,6 +19,7 @@ public class MyLinkedListImpl<T> implements MyList<T>, MyQueue<T>, MyStack<T> {
     }
 
 
+
     @Override
     public void add(T value) {
         addToTheEnd(value);

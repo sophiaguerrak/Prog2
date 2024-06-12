@@ -1,9 +1,7 @@
 package uy.edu.um.adt.hash;
 
+import uy.edu.um.adt.linkedlist.MyLinkedListImpl;
 import uy.edu.um.exceptions.InformacionInvalida;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class HashImpl<K, V> implements MyHash<K, V> {
     private class Dato<K, V> {
@@ -16,28 +14,23 @@ public class HashImpl<K, V> implements MyHash<K, V> {
         }
     }
 
-    private Dato<K, V>[] hashTable;
+    private MyLinkedListImpl<Dato<K, V>>[] hashTable;
     private int capacidad;
     private static final double LOAD_FACTOR = 0.75;
-    private int size;
+    public int size;
 
     public HashImpl(int capacity) {
         this.capacidad = capacity;
-        this.hashTable = new Dato[capacity];
-        this.size=0;
+        this.hashTable = new MyLinkedListImpl[capacity];
+        for (int i = 0; i < capacity; i++) {
+            hashTable[i] = new MyLinkedListImpl<>();
+        }
+        this.size = 0;
     }
 
-    private int getHashIndex(K key) {  // lo uso para insertar los datos de forma distribuida en la hash table
+    private int getHashIndex(K key) {
         int hash = Math.abs(key.hashCode());
-        int index = hash % capacidad;
-
-        while (hashTable[index] != null) {
-            if (hashTable[index].key.equals(key)) {
-                return index;  // Elemento encontrado
-            }
-            index = (index + 1) % capacidad;
-        }
-        return index;
+        return hash % capacidad;
     }
 
     @Override
@@ -45,14 +38,21 @@ public class HashImpl<K, V> implements MyHash<K, V> {
         if (key == null) {
             throw new InformacionInvalida();
         }
-        if (size + 1 >= capacidad * LOAD_FACTOR) { // nose que tan necesario es el segundo de getHashIndex +1
+        if (size + 1 >= capacidad * LOAD_FACTOR) {
             resize();
         }
         int index = getHashIndex(key);
-        hashTable[index] = new Dato<K,V>(key, value);
+        MyLinkedListImpl<Dato<K, V>> valores = hashTable[index];
+        for (int i = 0; i < valores.size(); i++) {
+            Dato<K, V> dato = valores.get(i);
+            if (dato.key.equals(key)) {
+                dato.value = value;
+                return;
+            }
+        }
+        valores.add(new Dato<>(key, value));
         size++;
     }
-
 
     @Override
     public V search(K key) throws InformacionInvalida {
@@ -60,12 +60,15 @@ public class HashImpl<K, V> implements MyHash<K, V> {
             throw new InformacionInvalida();
         }
         int index = getHashIndex(key);
-        if (hashTable[index]!=null)
-            return hashTable[index].value;
-
+        MyLinkedListImpl<Dato<K, V>> valores = hashTable[index];
+        for (int i = 0; i < valores.size(); i++) {
+            Dato<K, V> dato = valores.get(i);
+            if (dato.key.equals(key)) {
+                return dato.value;
+            }
+        }
         return null;
     }
-
 
     @Override
     public void delete(K key) throws InformacionInvalida {
@@ -73,7 +76,17 @@ public class HashImpl<K, V> implements MyHash<K, V> {
             throw new InformacionInvalida();
         }
         int index = getHashIndex(key);
-        hashTable[index] = null;
+        MyLinkedListImpl<Dato<K, V>> valores = hashTable[index];
+        Dato<K, V> toRemove = null;
+        for (int i = 0; i < valores.size(); i++) {
+            Dato<K, V> dato = valores.get(i);
+            if (dato.key.equals(key)) {
+                toRemove = dato;
+                valores.remove(toRemove);
+                size--;
+                return;
+            }
+        }
     }
 
     @Override
@@ -84,19 +97,27 @@ public class HashImpl<K, V> implements MyHash<K, V> {
         return search(key) != null;
     }
 
+    @Override
+    public int size() {
+        return size;
+    }
+
     private void resize() throws InformacionInvalida {
         int nuevaCapacidad = capacidad * 2;
-        Dato<K, V>[] nuevoArray = new Dato[nuevaCapacidad];
-        Dato<K, V>[] viejoArray = hashTable;
+        MyLinkedListImpl<Dato<K, V>>[] nuevoArray = new MyLinkedListImpl[nuevaCapacidad];
+        for (int i = 0; i < nuevaCapacidad; i++) {
+            nuevoArray[i] = new MyLinkedListImpl<>();
+        }
+        MyLinkedListImpl<Dato<K, V>>[] viejoArray = hashTable;
         this.capacidad = nuevaCapacidad;
         this.hashTable = nuevoArray;
-        for (Dato<K, V> dato : viejoArray) {
-            if (dato != null) {
+        for (MyLinkedListImpl<Dato<K, V>> valores : viejoArray) {
+            for (int i = 0; i < valores.size(); i++) {
+                Dato<K, V> dato = valores.get(i);
                 insert(dato.key, dato.value);
             }
         }
-
-
     }
-}
 
+
+}

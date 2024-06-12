@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="045ff70c-0ca7-4566-8f6c-33b6b21a9015" name="Changes" comment="hice funcion para cargar datos. hay que arreglar pq da error de memoria">
+    <list default="true" id="045ff70c-0ca7-4566-8f6c-33b6b21a9015" name="Changes" comment="arregle el hash, ya no da error de memoria">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/hash/HashImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/hash/HashImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/hash/MyHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/hash/MyHash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/linkedlist/MyLinkedListImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/linkedlist/MyLinkedListImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/entities/Artista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/entities/Artista.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +205,8 @@
       <workItem from="1718037777961" duration="6432000" />
       <workItem from="1718044236161" duration="61000" />
       <workItem from="1718044557544" duration="4176000" />
-      <workItem from="1718126383979" duration="891000" />
+      <workItem from="1718126383979" duration="1147000" />
+      <workItem from="1718212047773" duration="8318000" />
     </task>
     <task id="LOCAL-00001" summary="prueba">
       <option name="closed" value="true" />
@@ -292,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718044289701</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="arregle el hash, ya no da error de memoria">
+      <option name="closed" value="true" />
+      <created>1718127453631</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1718127453631</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,7 +329,8 @@
     <MESSAGE value="heap y test heap" />
     <MESSAGE value="arreglos al hash" />
     <MESSAGE value="hice funcion para cargar datos. hay que arreglar pq da error de memoria" />
-    <option name="LAST_COMMIT_MESSAGE" value="hice funcion para cargar datos. hay que arreglar pq da error de memoria" />
+    <MESSAGE value="arregle el hash, ya no da error de memoria" />
+    <option name="LAST_COMMIT_MESSAGE" value="arregle el hash, ya no da error de memoria" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
