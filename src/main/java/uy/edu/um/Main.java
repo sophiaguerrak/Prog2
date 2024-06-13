@@ -31,17 +31,17 @@ public class Main {
         String anio;
         String mes;
         String dia;
-
+        String opcion = "x";
 
         try {
             cargardatos();
-            int opcion = 1000;
-            while (opcion != 0) {
+
+            while (!opcion.equals("0")) {
                 ImprmirMenu();
                 Scanner input = new Scanner(System.in);
-                opcion = input.nextInt();
+                opcion = input.nextLine();
                 switch (opcion) {
-                    case 1:
+                    case "1":
                         System.out.println("Elija un pais: ");
                         String pais = input.nextLine();
                         System.out.println("Seleccione la fecha - ANIO: ");
@@ -53,7 +53,7 @@ public class Main {
                         fechaStr = anio + mes + dia;
                         obtenerTop10Canciones(pais, fechaStr);
                         break;
-                    case 2:
+                    case "2":
                         System.out.println("Seleccione la fecha. ANIO: ");
                         anio = input.nextLine() + "-";
                         System.out.println("MES: ");
