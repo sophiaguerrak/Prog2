@@ -25,7 +25,6 @@ public class Main {
     private static MyLinkedListImpl<String> paises = new MyLinkedListImpl<>();
 
 
-
     public static void main(String[] args) {
         String fechaStr;
         String anio;
@@ -190,6 +189,7 @@ public class Main {
     }
 
     public static void obtener5CancionesMasRepetidas(String fechaStr) throws ParseException, InformacionInvalida {
+        Date fecha = DATE_FORMAT.parse(fechaStr);
 
     }
 }
