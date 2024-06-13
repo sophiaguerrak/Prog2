@@ -111,6 +111,7 @@ public class MyLinkedListImpl<T> implements MyList<T>, MyQueue<T>, MyStack<T> {
         return contains;
     }
 
+
     public void remove(T value) {
         Node<T> beforeSearchValue = null;
         Node<T> searchValue = this.first;

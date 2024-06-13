@@ -2,6 +2,7 @@ package uy.edu.um;
 
 import uy.edu.um.entities.Artista;
 import uy.edu.um.entities.Cancion;
+import uy.edu.um.entities.CancionArtistaApariciones;
 import uy.edu.um.entities.Top50;
 import uy.edu.um.adt.hash.HashImpl;
 import uy.edu.um.exceptions.InformacionInvalida;
@@ -19,7 +20,7 @@ import static java.lang.System.in;
 
 public class Main {
 
-    private static final String MYPATH = "C:\\Users\\pc\\Desktop\\Facultad\\Semestre3\\Prog2\\DataSet\\universal_top_spotify_songs.csv";
+    private static final String MYPATH = "/Users/sophiaguerra/Desktop/universal_top_spotify_songs.csv";
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
     private static HashImpl<String, HashImpl<Date, Top50>> top50Map = new HashImpl<>(100);
     private static MyLinkedListImpl<String> paises = new MyLinkedListImpl<>();
@@ -190,6 +191,32 @@ public class Main {
 
     public static void obtener5CancionesMasRepetidas(String fechaStr) throws ParseException, InformacionInvalida {
         Date fecha = DATE_FORMAT.parse(fechaStr);
+        MyLinkedListImpl<CancionArtistaApariciones> cancionesFecha = new MyLinkedListImpl<>();
+        for (int i=0; i< paises.size(); i++){
+            HashImpl<Date,Top50> paisTop50 = top50Map.search(paises.get(i));
+            Top50 top50 = paisTop50.search(fecha);
+            for(Cancion cancion: top50.getPlaylist()) {
+                CancionArtistaApariciones temp = new CancionArtistaApariciones(cancion.getNombre(), cancion.getArtistas());
+                boolean esta = false;
+                for (int j = 0; j < cancionesFecha.size(); j++) {
+                    if (cancionesFecha.get(j).getNombre().equals(cancion.getNombre()) && cancionesFecha.get(j).getArtistas().equals(cancion.getArtistas())) {
+                        int apariciones = temp.getApariciones()+1;
+                        cancionesFecha.get(j).setApariciones(apariciones);
+                        esta = true;
+                        break;
+                    }
+                }
+                if (!esta) {
+                    cancionesFecha.add(temp);
+                }
 
+            }
+        }
     }
+}
+
+
+
+
+
 }
