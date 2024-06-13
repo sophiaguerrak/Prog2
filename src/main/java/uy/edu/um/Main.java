@@ -15,12 +15,12 @@ import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import static java.lang.System.in;
+
 
 
 public class Main {
 
-    private static final String MYPATH = "/Users/sophiaguerra/Desktop/universal_top_spotify_songs.csv";
+    private static final String MYPATH = "C:\\Users\\pc\\Desktop\\Facultad\\Semestre3\\Prog2\\DataSet\\universal_top_spotify_songs.csv";
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
     private static HashImpl<String, HashImpl<Date, Top50>> top50Map = new HashImpl<>(100);
     private static MyLinkedListImpl<String> paises = new MyLinkedListImpl<>();
@@ -35,7 +35,7 @@ public class Main {
 
         try {
             cargardatos();
-
+            //obtener5CancionesMasRepetidas("2024-04-10");
             while (!opcion.equals("0")) {
                 ImprmirMenu();
                 Scanner input = new Scanner(System.in);
@@ -66,10 +66,11 @@ public class Main {
                     default:
                         System.out.println("No hay mas opciones");
                 }
-                System.out.println("\n");
-            }
-        } catch(FileNotFoundException | ParseException | InformacionInvalida e) {
-                e.printStackTrace();
+
+            System.out.println("\n");
+        }
+        } catch (FileNotFoundException | ParseException | InformacionInvalida e) {
+            e.printStackTrace();
         }
     }
 
@@ -112,7 +113,7 @@ public class Main {
             int posicion = Integer.parseInt(data[2].replaceAll("[^0-9]", "").trim());
             float tempo = Float.parseFloat(data[22].replaceAll("[^0-9.]", "").trim());
             String pais = data[5].replaceAll("\"", "").trim();
-            if(!paises.contains(pais))
+            if (!paises.contains(pais))
                 paises.add(pais);
             String fechaStr = data[6].replaceAll("\"", "").trim();
             Date fecha = DATE_FORMAT.parse(fechaStr);
@@ -190,33 +191,61 @@ public class Main {
     }
 
     public static void obtener5CancionesMasRepetidas(String fechaStr) throws ParseException, InformacionInvalida {
+        System.out.println("LOADING...\n");
         Date fecha = DATE_FORMAT.parse(fechaStr);
         MyLinkedListImpl<CancionArtistaApariciones> cancionesFecha = new MyLinkedListImpl<>();
-        for (int i=0; i< paises.size(); i++){
-            HashImpl<Date,Top50> paisTop50 = top50Map.search(paises.get(i));
+        for (int i = 0; i < paises.size(); i++) {
+            HashImpl<Date, Top50> paisTop50 = top50Map.search(paises.get(i));
             Top50 top50 = paisTop50.search(fecha);
-            for(Cancion cancion: top50.getPlaylist()) {
-                CancionArtistaApariciones temp = new CancionArtistaApariciones(cancion.getNombre(), cancion.getArtistas());
+            for (Cancion cancion : top50.getPlaylist()) {
                 boolean esta = false;
                 for (int j = 0; j < cancionesFecha.size(); j++) {
-                    if (cancionesFecha.get(j).getNombre().equals(cancion.getNombre()) && cancionesFecha.get(j).getArtistas().equals(cancion.getArtistas())) {
-                        int apariciones = temp.getApariciones()+1;
-                        cancionesFecha.get(j).setApariciones(apariciones);
+                    if (cancionesFecha.get(j).getNombre().equals(cancion.getNombre())) {
+                        int apariciones = cancionesFecha.get(j).getApariciones();
+                        cancionesFecha.get(j).setApariciones(apariciones + 1);
                         esta = true;
                         break;
                     }
                 }
                 if (!esta) {
+                    CancionArtistaApariciones temp = new CancionArtistaApariciones(cancion.getNombre(), cancion.getArtistas());
+                    temp.setApariciones(1);
                     cancionesFecha.add(temp);
                 }
-
             }
         }
+
+        CancionArtistaApariciones[] top5 = new CancionArtistaApariciones[5];
+        for (int j = 0 ; j < 5 ; j++){
+            top5[j] = new CancionArtistaApariciones(null, null);
+        }
+
+        for (int k = 0; k < cancionesFecha.size(); k++) {
+            if (top5[0].getApariciones() < cancionesFecha.get(k).getApariciones()) {
+                top5[4] = top5[3];
+                top5[3] = top5[2];
+                top5[2] = top5[1];
+                top5[1] = top5[0];
+                top5[0] = cancionesFecha.get(k);
+            } else if ((top5[1].getApariciones() < cancionesFecha.get(k).getApariciones()) && (top5[0].getApariciones() > cancionesFecha.get(k).getApariciones())) {
+                top5[4] = top5[3];
+                top5[3] = top5[2];
+                top5[2] = top5[1];
+                top5[1] = cancionesFecha.get(k);
+            } else if ((top5[2].getApariciones() < cancionesFecha.get(k).getApariciones()) && (top5[1].getApariciones() > cancionesFecha.get(k).getApariciones())) {
+                top5[4] = top5[3];
+                top5[3] = top5[2];
+                top5[2] = cancionesFecha.get(k);
+            } else if ((top5[3].getApariciones() < cancionesFecha.get(k).getApariciones()) && (top5[2].getApariciones() > cancionesFecha.get(k).getApariciones())) {
+                top5[4] = top5[3];
+                top5[3] = cancionesFecha.get(k);
+            } else if ((top5[4].getApariciones() < cancionesFecha.get(k).getApariciones()) && (top5[3].getApariciones() > cancionesFecha.get(k).getApariciones())) {
+                top5[4] = cancionesFecha.get(k);
+            }
+        }
+        System.out.println("Las canciones que mas aparecen en un Top 50 para la fecha seleccionada son: \n");
+        for(int l = 0 ; l < 5 ; l++){
+            System.out.println((l+1) + " - " + top5[l].getNombre() + " - " + " con " + top5[l].getApariciones() + " apariciones");
+        }
     }
-}
-
-
-
-
-
 }

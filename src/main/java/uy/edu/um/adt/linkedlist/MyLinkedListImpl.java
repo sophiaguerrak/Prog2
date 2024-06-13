@@ -41,8 +41,6 @@ public class MyLinkedListImpl<T> implements MyList<T>, MyQueue<T>, MyStack<T> {
                 this.last = elementToAdd;
             }
 
-        } else {
-            // si el elemento es vacio se ignora
         }
     }
 
@@ -62,8 +60,6 @@ public class MyLinkedListImpl<T> implements MyList<T>, MyQueue<T>, MyStack<T> {
                 this.last = elementToAdd;
             }
 
-        } else {
-            // si el elemento es vacio se ignora
         }
     }
 
@@ -153,11 +149,7 @@ public class MyLinkedListImpl<T> implements MyList<T>, MyQueue<T>, MyStack<T> {
 
             }
 
-        } else {
-
-            // Si no es encuentra el valor a eliminar no se realiza nada
-
-        }
+        } 
 
     }
 
@@ -187,6 +179,7 @@ public class MyLinkedListImpl<T> implements MyList<T>, MyQueue<T>, MyStack<T> {
 
         return size;
     }
+
 
     // Operaciones particulares a Queue
 

@@ -4,7 +4,7 @@ import uy.edu.um.adt.linkedlist.MyLinkedListImpl;
 
 public class Cancion {
     String nombre;
-    MyLinkedListImpl<Artista> artistas= new MyLinkedListImpl<>();
+    MyLinkedListImpl<Artista> artistas = new MyLinkedListImpl<>();
     int posicion;
     float tempo;
 
