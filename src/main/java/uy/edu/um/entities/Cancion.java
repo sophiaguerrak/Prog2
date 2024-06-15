@@ -4,13 +4,13 @@ import uy.edu.um.adt.linkedlist.MyLinkedListImpl;
 
 public class Cancion {
     String nombre;
-    MyLinkedListImpl<Artista> artistas = new MyLinkedListImpl<>();
+    MyLinkedListImpl<Artista> artistas;
     int posicion;
     float tempo;
 
     public Cancion(String nombre, MyLinkedListImpl<Artista> artistas, int posicion, float tempo) {
         this.nombre = nombre;
-        this.artistas = artistas;
+        this.artistas = new MyLinkedListImpl<>();
         this.posicion = posicion;
         this.tempo = tempo;
     }

@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="045ff70c-0ca7-4566-8f6c-33b6b21a9015" name="Changes" comment="Hecho el menu aunque se saltea la parte de elegir el pais?? No entiendo por que, no me pregunten. Maniana lo arreglo">
+    <list default="true" id="045ff70c-0ca7-4566-8f6c-33b6b21a9015" name="Changes" comment="Cosas de la segunda funcion. atte&#10;:francisco">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Changes.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/linkedlist/MyLinkedListImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/adt/linkedlist/MyLinkedListImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/entities/Cancion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/entities/Cancion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/entities/CancionArtistaApariciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/entities/CancionArtistaApariciones.java" afterDir="false" />
     </list>
@@ -205,6 +205,7 @@
       <workItem from="1718044557544" duration="4176000" />
       <workItem from="1718126383979" duration="1147000" />
       <workItem from="1718212047773" duration="8318000" />
+      <workItem from="1718475453863" duration="6290000" />
     </task>
     <task id="LOCAL-00001" summary="prueba">
       <option name="closed" value="true" />
@@ -302,23 +303,7 @@
       <option name="project" value="LOCAL" />
       <updated>1718127453631</updated>
     </task>
-    <task id="LOCAL-00013" summary="Ajustes a como se crea y recorre la playlist de top10 por pais.">
-      <option name="closed" value="true" />
-      <created>1718227158895</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1718227158895</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Hecho el menu aunque se saltea la parte de elegir el pais?? No entiendo por que, no me pregunten. Maniana lo arreglo">
-      <option name="closed" value="true" />
-      <created>1718234656287</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1718234656287</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,9 +329,7 @@
     <MESSAGE value="arreglos al hash" />
     <MESSAGE value="hice funcion para cargar datos. hay que arreglar pq da error de memoria" />
     <MESSAGE value="arregle el hash, ya no da error de memoria" />
-    <MESSAGE value="Ajustes a como se crea y recorre la playlist de top10 por pais." />
-    <MESSAGE value="Hecho el menu aunque se saltea la parte de elegir el pais?? No entiendo por que, no me pregunten. Maniana lo arreglo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hecho el menu aunque se saltea la parte de elegir el pais?? No entiendo por que, no me pregunten. Maniana lo arreglo" />
+    <option name="LAST_COMMIT_MESSAGE" value="arregle el hash, ya no da error de memoria" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
