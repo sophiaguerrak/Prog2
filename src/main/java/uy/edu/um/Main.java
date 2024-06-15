@@ -11,8 +11,8 @@ import uy.edu.um.adt.linkedlist.MyLinkedListImpl;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.SQLOutput;
-import java.util.Scanner;
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -29,9 +29,13 @@ public class Main {
 
     public static void main(String[] args) {
         String fechaStr;
+        String fechaStr2;
         String anio;
+        String anio2;
         String mes;
+        String mes2;
         String dia;
+        String dia2;
         String opcion = "x";
 
         try {
@@ -63,6 +67,24 @@ public class Main {
                         fechaStr = anio + mes + dia;
                         obtener5CancionesMasRepetidas(fechaStr);
                         break;
+                    case "3":
+                        System.out.println("Seleccione la fecha de inicio. ANIO: ");
+                        anio = input.nextLine() + "-";
+                        System.out.println("MES: ");
+                        mes = input.nextLine() + "-";
+                        System.out.println("DIA: ");
+                        dia = input.nextLine();
+                        fechaStr = anio + mes + dia;
+                        System.out.println("Seleccione la fecha de fin. ANIO: ");
+                        anio2 = input.nextLine() + "-";
+                        System.out.println("MES: ");
+                        mes2 = input.nextLine() + "-";
+                        System.out.println("DIA: ");
+                        dia2 = input.nextLine();
+                        fechaStr2= anio2 + mes2 + dia2;
+                        obtenerTop7Artistas(fechaStr,fechaStr2);
+                        break;
+
                     case "4":
                         System.out.println("Seleccione un artista. ARTISTA: ");
                         String artista = input.nextLine() + "-";
@@ -264,6 +286,34 @@ public class Main {
             }
         }
 
+        public static void obtenerTop7Artistas(String fechaInicio, String fechaFin) throws ParseException, InformacionInvalida {
+            System.out.println("LOADING...\n");
+            List<Date> fechas = obtenerDifFechas(fechaInicio, fechaFin);
+            for (Date date : fechas) {
+                HashImpl<String, Top50> top50Todos = top50Map.search(date);
+
+
+                // que haga cositas
+
+
+            }
+
+    }
+    public static List<Date> obtenerDifFechas(String fechaIn, String fechaFin) throws ParseException {
+        Date startDate = DATE_FORMAT.parse(fechaIn);
+        Date endDate = DATE_FORMAT.parse(fechaFin);
+
+        List<Date> dates = new ArrayList<>();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(startDate);
+
+        while (!calendar.getTime().after(endDate)) {
+            dates.add(calendar.getTime());
+            calendar.add(Calendar.DATE, 1);
+        }
+
+        return dates;
+    }
 
 
     }
