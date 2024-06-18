@@ -112,6 +112,7 @@ public class SpotifyMgr implements SpotifyMgt {
     }
 
     public void obtenerTop10Canciones(String pais, String fechaStr) throws ParseException, InformacionInvalida {
+        System.out.println("LOADING...\n");
         Date fecha = DATE_FORMAT.parse(fechaStr);
         HashImpl<String, Top50> top50Todos = top50Map.search(fecha);
         if (top50Todos != null) {
@@ -157,7 +158,7 @@ public class SpotifyMgr implements SpotifyMgt {
             for (Cancion cancion : top50.getPlaylist()) {
                 boolean repetido = false;
                 for (int j = 0; j < cancionesFecha.size(); j++) {
-                    if (cancionesFecha.get(j).getNombre().equals(cancion.getNombre()) && cancionesFecha.get(j).getArtistas().equals(cancion.getArtistas())) {
+                    if (cancionesFecha.get(j).getNombre().equals(cancion.getNombre())) {
                         int apariciones = cancionesFecha.get(j).getAparicionesCancion();
                         cancionesFecha.get(j).setAparicionesCancion(apariciones + 1);
                         repetido = true;
@@ -256,7 +257,7 @@ public class SpotifyMgr implements SpotifyMgt {
                 }
             }
         }
-        System.out.println("El/La artista " + nombreArtista + "tiene " + contador + " apariciones en la fecha " + fechaStr);
+        System.out.println("El/La artista " + nombreArtista + " tiene " + contador + " apariciones en la fecha " + fechaStr);
     }
 
     public void obtenerCancionesTempoEspecifico(String tempo1, String tempo2, String fechaInicioStr, String fechaFinStr) throws ParseException, InformacionInvalida {
