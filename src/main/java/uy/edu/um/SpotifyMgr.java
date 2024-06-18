@@ -16,7 +16,6 @@ import java.util.List;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -24,7 +23,7 @@ import java.util.*;
 public class SpotifyMgr implements SpotifyMgt {
 
     private final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
-    private static final String MYPATH = "/Users/sophiaguerra/Desktop/universal_top_spotify_songs.csv";
+    private static final String MYPATH = "C:\\Users\\pc\\Desktop\\Facultad\\Semestre3\\Prog2\\DataSet\\universal_top_spotify_songs.csv";
 
     private static HashImpl<Date, HashImpl<String, Top50>> top50Map = new HashImpl<>(100);
     private static MyLinkedListImpl<String> paises = new MyLinkedListImpl<>();
@@ -113,6 +112,9 @@ public class SpotifyMgr implements SpotifyMgt {
 
     public void obtenerTop10Canciones(String pais, String fechaStr) throws ParseException, InformacionInvalida {
         System.out.println("LOADING...\n");
+
+        long startTime = System.currentTimeMillis();
+
         Date fecha = DATE_FORMAT.parse(fechaStr);
         HashImpl<String, Top50> top50Todos = top50Map.search(fecha);
         if (top50Todos != null) {
@@ -139,10 +141,16 @@ public class SpotifyMgr implements SpotifyMgt {
                 System.out.println("No se encontraron datos para " + pais + " en la fecha " + fechaStr);
             }
         }
+        long endTime = System.currentTimeMillis();
+        long duration = endTime - startTime;
+        System.out.println("La función tomó " + duration + " milisegundos en ejecutarse.");
     }
 
 
     public void obtener5CancionesMasRepetidas(String fechaStr) throws ParseException, InformacionInvalida {
+
+        long startTime = System.currentTimeMillis();
+
         System.out.println("LOADING...\n");
         Date fecha = DATE_FORMAT.parse(fechaStr);
         MyLinkedListImpl<CancionArtistaApariciones> cancionesFecha = new MyLinkedListImpl<>();
@@ -155,39 +163,48 @@ public class SpotifyMgr implements SpotifyMgt {
         for (int i = 0; i < paises.size(); i++) {
             HashImpl<String, Top50> paisTop50 = top50Map.search(fecha);
             Top50 top50 = paisTop50.search(paises.get(i));
-            for (Cancion cancion : top50.getPlaylist()) {
-                boolean repetido = false;
-                for (int j = 0; j < cancionesFecha.size(); j++) {
-                    if (cancionesFecha.get(j).getNombre().equals(cancion.getNombre())) {
-                        int apariciones = cancionesFecha.get(j).getAparicionesCancion();
-                        cancionesFecha.get(j).setAparicionesCancion(apariciones + 1);
-                        repetido = true;
-                        break;
+            if (top50 != null) {
+                for (Cancion cancion : top50.getPlaylist()) {
+                    if (cancion != null) {
+                        boolean repetido = false;
+                        for (int j = 0; j < cancionesFecha.size(); j++) {
+                            if (cancionesFecha.get(j).getNombre().equals(cancion.getNombre())) {
+                                int apariciones = cancionesFecha.get(j).getAparicionesCancion();
+                                cancionesFecha.get(j).setAparicionesCancion(apariciones + 1);
+                                repetido = true;
+                                break;
+                            }
+                        }
+                        if (!repetido) {
+                            CancionArtistaApariciones temp = new CancionArtistaApariciones(cancion.getNombre(), cancion.getArtistas(), fecha);
+                            temp.setAparicionesCancion(1);
+                            cancionesFecha.add(temp);
+                        }
                     }
-                }
-                if (!repetido) {
-                    CancionArtistaApariciones temp = new CancionArtistaApariciones(cancion.getNombre(), cancion.getArtistas(), fecha);
-                    temp.setAparicionesCancion(1);
-                    cancionesFecha.add(temp);
                 }
             }
         }
-
         List<CancionArtistaApariciones> listaCanciones = new ArrayList<>();
         for (int i = 0; i < cancionesFecha.size(); i++) {
             listaCanciones.add(cancionesFecha.get(i));
         }
         listaCanciones.sort((a, b) -> b.getAparicionesCancion() - a.getAparicionesCancion()); //ordena por apariciones
 
-        System.out.println("Las canciones que más aparecen en un Top 50 para la fecha seleccionada son: \n");
+        System.out.println("Las canciones que mÃ¡s aparecen en un Top 50 para la fecha seleccionada son: \n");
         for (int i = 0; i < Math.min(5, listaCanciones.size()); i++) {
             CancionArtistaApariciones cancion = listaCanciones.get(i);
             System.out.println((i + 1) + " - " + cancion.getNombre() + " - " + " con " + cancion.getAparicionesCancion() + " apariciones");
         }
+
+        long endTime = System.currentTimeMillis();
+        long duration = endTime - startTime;
+        System.out.println("La función tomó " + duration + " milisegundos en ejecutarse.");
     }
 
     public void obtenerTop7Artistas(String fechaInicio, String fechaFin) throws ParseException, InformacionInvalida {
         System.out.println("LOADING...\n");
+        long startTime = System.currentTimeMillis();
+
         List<Date> fechas = obtenerDifFechas(fechaInicio, fechaFin);
 
         HashMap<String, Integer> contadorArtistas = new HashMap<>();
@@ -222,9 +239,15 @@ public class SpotifyMgr implements SpotifyMgt {
             Map.Entry<String, Integer> entry = listaArtistas.get(i);
             System.out.println((i + 1) + " - " + entry.getKey() + " con " + entry.getValue() + " apariciones");
         }
+
+        long endTime = System.currentTimeMillis();
+        long duration = endTime - startTime;
+        System.out.println("La función tomó " + duration + " milisegundos en ejecutarse.");
+
     }
 
     public List<Date> obtenerDifFechas(String fechaIn, String fechaFin) throws ParseException {
+
         Date startDate = DATE_FORMAT.parse(fechaIn);
         Date endDate = DATE_FORMAT.parse(fechaFin);
 
@@ -241,6 +264,8 @@ public class SpotifyMgr implements SpotifyMgt {
     }
 
     public void obtenerAparicionesArtista(String nombreArtista, String fechaStr) throws ParseException, InformacionInvalida {
+        long startTime = System.currentTimeMillis();
+
         System.out.println("LOADING...\n");
         Date fecha = DATE_FORMAT.parse(fechaStr);
         HashImpl<String, Top50> top50Todos = top50Map.search(fecha);
@@ -248,19 +273,26 @@ public class SpotifyMgr implements SpotifyMgt {
 
         for (int i = 0; i < paises.size(); i++) {
             Top50 top50 = top50Todos.search(paises.get(i));
-            for (Cancion cancion : top50.getPlaylist()) {
-                for (int j = 0; j < cancion.getArtistas().size(); j++) {
-                    String nombre = cancion.getArtistas().get(j).getNombre();
-                    if (nombre.equals(nombreArtista)) {
-                        contador++;
+            if (top50 != null) {
+                for (Cancion cancion : top50.getPlaylist()) {
+                    for (int j = 0; j < cancion.getArtistas().size(); j++) {
+                        String nombre = cancion.getArtistas().get(j).getNombre();
+                        if (nombre.equals(nombreArtista)) {
+                            contador++;
+                        }
                     }
                 }
             }
         }
         System.out.println("El/La artista " + nombreArtista + " tiene " + contador + " apariciones en la fecha " + fechaStr);
+        long endTime = System.currentTimeMillis();
+        long duration = endTime - startTime;
+        System.out.println("La función tomó " + duration + " milisegundos en ejecutarse.");
     }
 
     public void obtenerCancionesTempoEspecifico(String tempo1, String tempo2, String fechaInicioStr, String fechaFinStr) throws ParseException, InformacionInvalida {
+        long startTime = System.currentTimeMillis();
+
         System.out.println("LOADING...\n");
         List<Date> fechas = obtenerDifFechas(fechaInicioStr, fechaFinStr);
         float tempoInicial = Float.parseFloat(tempo1);
@@ -290,6 +322,9 @@ public class SpotifyMgr implements SpotifyMgt {
         for (int i = 0; i < cancionesTempo.size(); i++) {
             System.out.println(i + "- " + cancionesTempo.get(i));
         }
+        long endTime = System.currentTimeMillis();
+        long duration = endTime - startTime;
+        System.out.println("La función tomó " + duration + " milisegundos en ejecutarse.");
     }
 
     public static boolean esta(MyLinkedListImpl lista, String nombre) {
