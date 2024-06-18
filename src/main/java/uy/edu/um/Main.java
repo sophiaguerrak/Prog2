@@ -259,7 +259,7 @@ public class Main {
             for (Cancion cancion : top50.getPlaylist()) {
                 boolean repetido = false;
                 for (int j = 0; j < cancionesFecha.size(); j++) {
-                    if (cancionesFecha.get(j).getNombre().equals(cancion.getNombre())) {
+                    if (cancionesFecha.get(j).getNombre().equals(cancion.getNombre()) && cancionesFecha.get(j).getArtistas().equals(cancion.getArtistas())) {
                         int apariciones = cancionesFecha.get(j).getAparicionesCancion();
                         cancionesFecha.get(j).setAparicionesCancion(apariciones + 1);
                         repetido = true;
