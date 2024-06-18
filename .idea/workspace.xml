@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="045ff70c-0ca7-4566-8f6c-33b6b21a9015" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/uy/edu/um/Main.java">
+    <list default="true" id="045ff70c-0ca7-4566-8f6c-33b6b21a9015" name="Changes" comment="Agregadas los conteos de tiempo. Corroborado que &quot;cancion&quot; y &quot;top50&quot; no sean null para no dar error en dias que no tengan datos existentes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/SpotifyMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/SpotifyMgr.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -206,7 +205,7 @@
       <workItem from="1718126383979" duration="1147000" />
       <workItem from="1718212047773" duration="8318000" />
       <workItem from="1718475453863" duration="7995000" />
-      <workItem from="1718733503401" duration="6131000" />
+      <workItem from="1718733503401" duration="8688000" />
     </task>
     <task id="LOCAL-00001" summary="prueba">
       <option name="closed" value="true" />
@@ -312,7 +311,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718482009138</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Agregadas los conteos de tiempo. Corroborado que &quot;cancion&quot; y &quot;top50&quot; no sean null para no dar error en dias que no tengan datos existentes">
+      <option name="closed" value="true" />
+      <created>1718742109171</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1718742109171</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +346,8 @@
     <MESSAGE value="hice funcion para cargar datos. hay que arreglar pq da error de memoria" />
     <MESSAGE value="arregle el hash, ya no da error de memoria" />
     <MESSAGE value="funcion 2 y cambiamos el hash" />
-    <option name="LAST_COMMIT_MESSAGE" value="funcion 2 y cambiamos el hash" />
+    <MESSAGE value="Agregadas los conteos de tiempo. Corroborado que &quot;cancion&quot; y &quot;top50&quot; no sean null para no dar error en dias que no tengan datos existentes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregadas los conteos de tiempo. Corroborado que &quot;cancion&quot; y &quot;top50&quot; no sean null para no dar error en dias que no tengan datos existentes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

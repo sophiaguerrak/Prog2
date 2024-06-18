@@ -318,10 +318,8 @@ public class SpotifyMgr implements SpotifyMgt {
                 }
             }
         }
-        System.out.println("Las canciones dentro del rango especificado de tempo y fechas son: \n");
-        for (int i = 0; i < cancionesTempo.size(); i++) {
-            System.out.println(i + "- " + cancionesTempo.get(i));
-        }
+        System.out.println("Hay " + cancionesTempo.size() + " canciones en el intervalo de tempos para el rango de fechas especificado.");
+
         long endTime = System.currentTimeMillis();
         long duration = endTime - startTime;
         System.out.println("La función tomó " + duration + " milisegundos en ejecutarse.");
