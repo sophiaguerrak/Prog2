@@ -5,9 +5,7 @@ Guerra, Tauber, Ferra y Borges.
 **Importante:** asegurarse que en SpotifyMgr la variable MYPATH sea el directorio donde se ubica el archivo universal_top_spotify_songs.csv
 
 ## Diagrama UML de la solución
-![UMLProg2 drawio (1)](https://github.com/sophiaguerrak/Prog2/assets/132523742/57a51465-0fc1-4692-acc5-5e17454573d0)
-
-
+![UMLProg2 drawio (2)](https://github.com/sophiaguerrak/Prog2/assets/132523742/097d894c-3dc0-4bc0-a110-b940f98bb8d3)
 
 ## Procesos de carga
 
