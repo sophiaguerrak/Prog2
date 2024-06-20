@@ -46,21 +46,21 @@ Memoria total: 978MB
 Memoria libre: 566MB
 Memoria usada: 411MB.
  
-  - *obtenerTop7Artistas*
+  - *obtenerTop7Artistas:*
  La funcion tomo 26 milisegundos en ejecutarse.
 Memoria máxima: 4096MB.
 Memoria total: 990MB.
 Memoria libre: 768MB.
 Memoria usada: 221MB.
 
- - *obtenerAparicionesArtista*
+ - *obtenerAparicionesArtista:*
  La funcion tomo 5 milisegundos en ejecutarse.
 Memoria máxima: 4096MB.
 Memoria total: 990MB.
 Memoria libre: 767MB.
 Memoria usada: 222MB.
 
- - *obtenerCancionesTempoEspecifico*
+ - *obtenerCancionesTempoEspecifico:*
 La funcion tomo 6581 milisegundos en ejecutarse.
 Memoria máxima: 4096MB.
 Memoria total: 990MB.
