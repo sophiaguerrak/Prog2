@@ -28,12 +28,14 @@ public class Main {
                         System.out.println("Seleccione la fecha: (yyyy-MM-dd) ");
                         fechaStr = input.nextLine();
                         miSpotify.obtenerTop10Canciones(pais, fechaStr);
+                        miSpotify.memoria();
                         break;
 
                     case "2":
                         System.out.println("Seleccione la fecha: (yyyy-MM-dd) ");
                         fechaStr = input.nextLine();
                         miSpotify.obtener5CancionesMasRepetidas(fechaStr);
+                        miSpotify.memoria();
                         break;
 
                     case "3":
@@ -42,6 +44,7 @@ public class Main {
                         System.out.println("Seleccione la fecha de fin: (yyyy-MM-dd) ");
                         fechaStr2 = input.nextLine();
                         miSpotify.obtenerTop7Artistas(fechaStr, fechaStr2);
+                        miSpotify.memoria();
                         break;
 
                     case "4":
@@ -50,6 +53,7 @@ public class Main {
                         System.out.println("Seleccione la fecha: (yyyy-MM-dd) ");
                         fechaStr = input.nextLine();
                         miSpotify.obtenerAparicionesArtista(artista, fechaStr);
+                        miSpotify.memoria();
                         break;
 
                     case "5":
@@ -62,6 +66,7 @@ public class Main {
                         System.out.println("Seleccione la fecha de fin: (yyyy-MM-dd) ");
                         fechaStr2 = input.nextLine();
                         miSpotify.obtenerCancionesTempoEspecifico(tempo1, tempo2, fechaStr, fechaStr2);
+                        miSpotify.memoria();
                         break;
 
                     default:

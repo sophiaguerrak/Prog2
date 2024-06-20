@@ -141,6 +141,7 @@ public class SpotifyMgr implements SpotifyMgt {
                 System.out.println("No se encontraron datos para " + pais + " en la fecha " + fechaStr);
             }
         }
+        System.out.println("\n");
         long endTime = System.currentTimeMillis();
         long duration = endTime - startTime;
         System.out.println("La función tomó " + duration + " milisegundos en ejecutarse.");
@@ -195,7 +196,7 @@ public class SpotifyMgr implements SpotifyMgt {
             CancionArtistaApariciones cancion = listaCanciones.get(i);
             System.out.println((i + 1) + " - " + cancion.getNombre() + " - " + " con " + cancion.getAparicionesCancion() + " apariciones");
         }
-
+        System.out.println("\n");
         long endTime = System.currentTimeMillis();
         long duration = endTime - startTime;
         System.out.println("La funcion tomo " + duration + " milisegundos en ejecutarse.");
@@ -237,9 +238,9 @@ public class SpotifyMgr implements SpotifyMgt {
         System.out.println("Top 7 artistas con mas apariciones en Top 50 para el rango de fechas " + fechaInicio + " a " + fechaFin + ":");
         for (int i = 0; i < Math.min(7, listaArtistas.size()); i++) {
             Map.Entry<String, Integer> entry = listaArtistas.get(i);
-            System.out.println((i + 1) + " - " + entry.getKey() + " con " + entry.getValue() + " apariciones");
+            System.out.println((i + 1) + " - " + entry.getKey() + " con " + entry.getValue() + " apariciones" );
         }
-
+        System.out.println("\n");
         long endTime = System.currentTimeMillis();
         long duration = endTime - startTime;
         System.out.println("La funcion tomo " + duration + " milisegundos en ejecutarse.");
@@ -275,19 +276,21 @@ public class SpotifyMgr implements SpotifyMgt {
             Top50 top50 = top50Todos.search(paises.get(i));
             if (top50 != null) {
                 for (Cancion cancion : top50.getPlaylist()) {
-                    for (int j = 0; j < cancion.getArtistas().size(); j++) {
-                        String nombre = cancion.getArtistas().get(j).getNombre();
-                        if (nombre.equals(nombreArtista)) {
-                            contador++;
+                    if (cancion != null) {
+                        for (int j = 0; j < cancion.getArtistas().size(); j++) {
+                            String nombre = cancion.getArtistas().get(j).getNombre();
+                            if (nombre.equals(nombreArtista)) {
+                                contador++;
+                            }
                         }
                     }
                 }
             }
         }
-        System.out.println("El/La artista " + nombreArtista + " tiene " + contador + " apariciones en la fecha " + fechaStr);
+        System.out.println("El/La artista " + nombreArtista + " tiene " + contador + " apariciones en la fecha " + fechaStr+"\n");
         long endTime = System.currentTimeMillis();
         long duration = endTime - startTime;
-        System.out.println("La funcion tomo " + duration + " milisegundos en ejecutarse.");
+        System.out.println("La funcion tomo " + duration + " milisegundos en ejecutarse." );
     }
 
     public void obtenerCancionesTempoEspecifico(String tempo1, String tempo2, String fechaInicioStr, String fechaFinStr) throws ParseException, InformacionInvalida {
@@ -316,7 +319,7 @@ public class SpotifyMgr implements SpotifyMgt {
                 }
             }
         }
-        System.out.println("Hay " + cancionesTempo.size() + " canciones en el intervalo de tempos para el rango de fechas especificado.");
+        System.out.println("Hay " + cancionesTempo.size() + " canciones en el intervalo de tempos para el rango de fechas especificado." + "\n");
 
         long endTime = System.currentTimeMillis();
         long duration = endTime - startTime;
@@ -330,6 +333,15 @@ public class SpotifyMgr implements SpotifyMgt {
             }
         }
         return false;
+    }
+
+    public void memoria(){
+        Runtime runtime = Runtime.getRuntime();
+        int dataSize = 1024 * 1024;
+        System.out.println ("Memoria máxima: " + runtime.maxMemory() / dataSize + "MB");
+        System.out.println ("Memoria total: " + runtime.totalMemory() / dataSize + "MB");
+        System.out.println ("Memoria libre: " + runtime.freeMemory() / dataSize + "MB");
+        System.out.println ("Memoria usada: " + (runtime.totalMemory() - runtime.freeMemory()) / dataSize + "MB");
     }
 
 }

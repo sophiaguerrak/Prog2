@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="045ff70c-0ca7-4566-8f6c-33b6b21a9015" name="Changes" comment="arreglitos parte 2">
+    <list default="true" id="045ff70c-0ca7-4566-8f6c-33b6b21a9015" name="Changes" comment="cambie el formato de fecha para ingresarlo como pedia el problema. borre algunas variables que no usamos, y saque los tildes para que no se tilde">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/SpotifyMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/SpotifyMgr.java" afterDir="false" />
@@ -205,6 +205,9 @@
       <workItem from="1718212047773" duration="8318000" />
       <workItem from="1718475453863" duration="8052000" />
       <workItem from="1718633282795" duration="8184000" />
+      <workItem from="1718754419742" duration="297000" />
+      <workItem from="1718815921311" duration="204000" />
+      <workItem from="1718906556995" duration="995000" />
     </task>
     <task id="LOCAL-00001" summary="prueba">
       <option name="closed" value="true" />
@@ -326,7 +329,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718673786459</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="cambie el formato de fecha para ingresarlo como pedia el problema. borre algunas variables que no usamos, y saque los tildes para que no se tilde">
+      <option name="closed" value="true" />
+      <created>1718750656183</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1718750656183</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +366,8 @@
     <MESSAGE value="funcion 2 y cambiamos el hash" />
     <MESSAGE value="empezamos la funcion 3 con pancho. hicimos una funcion auxiliar que me da las fechas que hay entre 2 fechas" />
     <MESSAGE value="arreglitos parte 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="arreglitos parte 2" />
+    <MESSAGE value="cambie el formato de fecha para ingresarlo como pedia el problema. borre algunas variables que no usamos, y saque los tildes para que no se tilde" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambie el formato de fecha para ingresarlo como pedia el problema. borre algunas variables que no usamos, y saque los tildes para que no se tilde" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
