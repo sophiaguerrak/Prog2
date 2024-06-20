@@ -149,57 +149,45 @@ public class SpotifyMgr implements SpotifyMgt {
 
 
     public void obtener5CancionesMasRepetidas(String fechaStr) throws ParseException, InformacionInvalida {
-
         long startTime = System.currentTimeMillis();
 
         System.out.println("LOADING...\n");
         Date fecha = DATE_FORMAT.parse(fechaStr);
-        MyLinkedListImpl<CancionArtistaApariciones> cancionesFecha = new MyLinkedListImpl<>();
+        Map<String, CancionArtistaApariciones> cancionesMap = new HashMap<>();
 
-        CancionArtistaApariciones[] top5 = new CancionArtistaApariciones[5];
-        for (int j = 0; j < 5; j++) {
-            top5[j] = new CancionArtistaApariciones(null, null, fecha);
-        }
-
-        for (int i = 0; i < paises.size(); i++) {
+        for (int i=0; i<paises.size(); i++) {
             HashImpl<String, Top50> paisTop50 = top50Map.search(fecha);
-            Top50 top50 = paisTop50.search(paises.get(i));
+            Top50 top50 = paisTop50 != null ? paisTop50.search(paises.get(i)) : null;
+
             if (top50 != null) {
                 for (Cancion cancion : top50.getPlaylist()) {
                     if (cancion != null) {
-                        boolean repetido = false;
-                        for (int j = 0; j < cancionesFecha.size(); j++) {
-                            if (cancionesFecha.get(j).getNombre().equals(cancion.getNombre())) {
-                                int apariciones = cancionesFecha.get(j).getAparicionesCancion();
-                                cancionesFecha.get(j).setAparicionesCancion(apariciones + 1);
-                                repetido = true;
-                                break;
-                            }
-                        }
-                        if (!repetido) {
-                            CancionArtistaApariciones temp = new CancionArtistaApariciones(cancion.getNombre(), cancion.getArtistas(), fecha);
-                            temp.setAparicionesCancion(1);
-                            cancionesFecha.add(temp);
+                        CancionArtistaApariciones cancionArtista = cancionesMap.get(cancion.getNombre());
+                        if (cancionArtista != null) {
+                            cancionArtista.setAparicionesCancion(cancionArtista.getAparicionesCancion() + 1);
+                        } else {
+                            cancionArtista = new CancionArtistaApariciones(cancion.getNombre(), cancion.getArtistas(), fecha);
+                            cancionArtista.setAparicionesCancion(1);
+                            cancionesMap.put(cancion.getNombre(), cancionArtista);
                         }
                     }
                 }
             }
         }
-        List<CancionArtistaApariciones> listaCanciones = new ArrayList<>();
-        for (int i = 0; i < cancionesFecha.size(); i++) {
-            listaCanciones.add(cancionesFecha.get(i));
-        }
-        listaCanciones.sort((a, b) -> b.getAparicionesCancion() - a.getAparicionesCancion()); //ordena por apariciones
 
-        System.out.println("Las canciones que mas aparecen en un Top 50 para la fecha seleccionada son: \n");
+        List<CancionArtistaApariciones> listaCanciones = new ArrayList<>(cancionesMap.values());
+        listaCanciones.sort((a, b) -> b.getAparicionesCancion() - a.getAparicionesCancion()); // ordena por apariciones
+
+        System.out.println("Las canciones que más aparecen en un Top 50 para la fecha seleccionada son:\n");
         for (int i = 0; i < Math.min(5, listaCanciones.size()); i++) {
             CancionArtistaApariciones cancion = listaCanciones.get(i);
             System.out.println((i + 1) + " - " + cancion.getNombre() + " - " + " con " + cancion.getAparicionesCancion() + " apariciones");
         }
+
         System.out.println("\n");
         long endTime = System.currentTimeMillis();
         long duration = endTime - startTime;
-        System.out.println("La funcion tomo " + duration + " milisegundos en ejecutarse.");
+        System.out.println("La función tomó " + duration + " milisegundos en ejecutarse.");
     }
 
     public void obtenerTop7Artistas(String fechaInicio, String fechaFin) throws ParseException, InformacionInvalida {
